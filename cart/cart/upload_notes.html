@@ -1,0 +1,73 @@
+{% extends 'usernavigation.html' %}
+{% load static %}
+{% block body %}
+<div class="container mt-5">
+    <h2 class="text-center">UPLOAD NOTES</h2>
+    <hr>
+    <div class="row" style="padding-right:24%">
+        <div class="col-sm-6 "></div>
+
+            
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <label style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;"> Subject List:</label>
+                <select class="form-control" name="subject" >
+                    <option value="">--Select Subject--</option>
+                    {% for ct in category %}
+                    <option value="{{ct.id}}" >{{ct.name}}</option>
+                    {% endfor %}
+                </select>  <br>              
+                <label style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;">Notes File</label>
+                <input type="file" class="form-control"  name="notesfile">
+                <br>
+                <label style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;">File type</label>
+                <select class="form-control"  name="filetype">
+                    <option value="">--select filetype--</option>
+                    <option value="PDF">PDF</option>
+                    <option value="PPT">PPT</option>
+                    <option value="TXT">TXT</option>
+                    <option value="doc/docx">DOC/DOCX</option>
+                    <option value="IMAGE">IMAGE</option>
+                    <option value="ZIP/RAR">ZIP/RAR</option>
+                </select> 
+                <br>        
+                <label style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;">Description</label>
+                <textarea class="form-control"  name="description"></textarea>
+                <br>
+                <input type="submit" class="btn-btn-danger mt-2" value="SUBMIT">
+                </form>
+        </div>
+
+                <div class="container md-5">
+                    {% if messages %}
+            {% for message in messages %}
+            <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>
+            {% endfor %}
+            {% endif %}
+                    <p style= " font-family: Verdana, Geneva, Tahoma, sans-serif; color: teal;"> If subject is not available , add it to the subject list</p>
+                    
+                    <button class="signupbuttom"><a href="{% url 'add_subject' %}" >ADD SUBJECT</a></button>
+                    
+                </div>
+
+        </div>
+        </div>
+
+
+{% ifequal error "no" %}
+<script>
+    alert('Notes uploaded successfully');
+    
+    
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+    alert('Something went wrong !!Try again');
+</script>
+{% endifequal %}
+
+
+{% endblock %}
