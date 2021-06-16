@@ -1,5 +1,5 @@
 # Notes-Depot
 
 
-<h1> ***Upload, Explore, Succeed!!***  </h1>
+<h1>***Upload, Explore, Succeed!!***</h1>
 
