@@ -1,0 +1,28 @@
+{% extends 'navigation.html' %}
+{% block body %}
+{% load static %}
+
+<head>
+    <style>
+    .image
+    {
+        background-image: url("{%static 'images/1.jpg' %}");
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        opacity: 100%;
+        text-align: center;
+        font-family: 'Bebas Neue', cursive;
+    }
+
+    
+    </style>
+  
+</head>
+
+<body>
+    <div class="image">
+        <p style="padding-top:150px; font-size:30px; ">Upload, Explore, Succeed!</p>
+    </div>
+</body>
+{% endblock %}
