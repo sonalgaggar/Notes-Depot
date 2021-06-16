@@ -1,4 +1,4 @@
 # Notes-Depot
 <br>
-***Upload, Explore, Succeed!!
+* ***Upload, Explore, Succeed!!***
 **Bold Text**
