@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+  <style>
+    body {
+      background-image: url('twitter image.jpg');
+      background-repeat: no-repeat;
+    }
+    </style>
+</head>
+
+<body style="background-color:white;">
+<form action="/predict" method="POST">
+  <label for="analyse">Choose one option:</label>
+  <select name="analyse" id="analyse">
+    <option value="searchbywords">tweets related to a topic</option>
+    <option value="byuser">get tweets of a particular twitter handler</option>
+  </select>
+  <input type="submit" >
+</form>
+
+<p>Click the "Submit" button and the form-data will be sent to a page on the
+server called "action_page.php".</p>
+
+</body>
+</html>
+
